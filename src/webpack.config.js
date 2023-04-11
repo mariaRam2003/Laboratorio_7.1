@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    app: './src/index.js',
+    app: './/src/app/index.html',
     polyfills: './src/polyfills.js'
   },
   output: {
@@ -13,8 +13,12 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader', 'sass-loader']
       },
+      {
+        test: /\.html$/,
+        use: ['html-loader']
+      },      
       {
         test: /\.js$/,
         exclude: /node_modules/,
